@@ -9,7 +9,7 @@ jobs:
            git config --global user.name "jash"
            git config --global user.email "jashvakharia@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -b ${CIRCLE_BRANCH} .
+           git clone --depth=1 https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -b ${CIRCLE_BRANCH} try
            bash .circleci/build.sh
 workflows:
   version: 2.1
