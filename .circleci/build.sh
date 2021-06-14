@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 echo "Cloning needed repos" #trigger build
+cd try
 git clone --depth=1 -b master https://github.com/MASTERGUY/proton-clang clang
 git clone --depth=1 https://github.com/stormbreaker-project/AnyKernel3 -b sweet AnyKernel
 echo "Done"
@@ -56,7 +57,6 @@ function zipping() {
     cd AnyKernel || exit 1
     zip -r9 Sweet-StormBreaker-V2-${TANGGAL}.zip *
     curl --upload-file ./Sweet-StormBreaker-V2-${TANGGAL}.zip https://transfer.sh/Sweet-StormBreaker-V2-${TANGGAL}.zip
-    cd ..
 }
 sendinfo
 compile
