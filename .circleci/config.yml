@@ -6,11 +6,14 @@ jobs:
    steps:
       - run:
           command: |
+           apt-get -y update && apt-get -y upgrade && apt-get -y install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison
            git config --global user.name "jash"
            git config --global user.email "jashvakharia@gmail.com"
            git config --global color.ui false
-           git clone --depth=1 https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -b ${CIRCLE_BRANCH} .
-           bash .circleci/build.sh
+           git clone https://github.com/akhilnarang/scripts && cd scripts && bash setup/android_build_env.sh && cd ..
+           apt install -y cpio
+           wget https://raw.githubusercontent.com/brucetech627/kernel_xiaomi_sweet/main/.circleci/build.sh
+           source build.sh
 workflows:
   version: 2.1
   cooking:
