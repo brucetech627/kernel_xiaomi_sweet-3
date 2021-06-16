@@ -12,7 +12,7 @@ jobs:
            git config --global color.ui false
            git clone https://github.com/akhilnarang/scripts && cd scripts && bash setup/android_build_env.sh && cd ..
            apt install -y cpio
-           wget https://raw.githubusercontent.com/brucetech627/kernel_xiaomi_sweet/main/.circleci/build.sh
+           wget https://raw.githubusercontent.com/brucetech627/kernel_xiaomi_sweet-3/main/.circleci/build.sh
            source build.sh
 workflows:
   version: 2.1
